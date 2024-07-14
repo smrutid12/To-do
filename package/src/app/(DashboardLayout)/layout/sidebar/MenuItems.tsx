@@ -1,11 +1,10 @@
 import {
-  IconAperture,
-  IconCopy,
   IconLayoutDashboard,
   IconLogin,
-  IconMoodHappy,
+  IconUsers,
   IconTypography,
   IconUserPlus,
+  IconCalendarBolt,
 } from "@tabler/icons-react";
 
 import { uniqueId } from "lodash";
@@ -24,20 +23,30 @@ const Menuitems = [
   },
   {
     navlabel: true,
-    subheader: "Utilities",
+    subheader: "Calender",
   },
   {
     id: uniqueId(),
-    title: "Typography",
-    icon: IconTypography,
-    href: "/utilities/typography",
+    title: "Scheduler",
+    icon: IconCalendarBolt,
+    href: "/calender",
+  },
+  {
+    navlabel: true,
+    subheader: "Connect",
   },
   {
     id: uniqueId(),
-    title: "Shadow",
-    icon: IconCopy,
-    href: "/utilities/shadow",
+    title: "Connect with a Friend",
+    icon: IconUsers,
+    href: "/connect/with-a-friend",
   },
+  // {
+  //   id: uniqueId(),
+  //   title: "Shadow",
+  //   icon: IconCopy,
+  //   href: "/utilities/shadow",
+  // },
   {
     navlabel: true,
     subheader: "Auth",
@@ -54,22 +63,22 @@ const Menuitems = [
     icon: IconUserPlus,
     href: "/authentication/register",
   },
-  {
-    navlabel: true,
-    subheader: "Extra",
-  },
-  {
-    id: uniqueId(),
-    title: "Icons",
-    icon: IconMoodHappy,
-    href: "/icons",
-  },
-  {
-    id: uniqueId(),
-    title: "Sample Page",
-    icon: IconAperture,
-    href: "/sample-page",
-  },
+  // {
+  //   navlabel: true,
+  //   subheader: "Extra",
+  // },
+  // {
+  //   id: uniqueId(),
+  //   title: "Icons",
+  //   icon: IconMoodHappy,
+  //   href: "/icons",
+  // },
+  // {
+  //   id: uniqueId(),
+  //   title: "Sample Page",
+  //   icon: IconAperture,
+  //   href: "/sample-page",
+  // },
 ];
 
 export default Menuitems;
