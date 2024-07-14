@@ -1,7 +1,8 @@
-### Visitionary
+# Visitionary 📃
 
+A task manager to help you organize and streamline your daily tasks.
 
-# Installation 👨🏻‍💻
+## Installation 👨🏻‍💻
 
 > We recommend you use npm
 
