@@ -29,7 +29,7 @@ const Menuitems = [
     id: uniqueId(),
     title: "Scheduler",
     icon: IconCalendarBolt,
-    href: "/calender",
+    href: "/calender"
   },
   {
     navlabel: true,
@@ -39,7 +39,7 @@ const Menuitems = [
     id: uniqueId(),
     title: "Connect with a Friend",
     icon: IconUsers,
-    href: "/connect/with-a-friend",
+    href: "/connect/with-email",
   },
   // {
   //   id: uniqueId(),

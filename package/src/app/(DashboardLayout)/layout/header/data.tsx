@@ -154,6 +154,13 @@ const pageLinks = [
     title: 'Register Now'
   },
   {
+    href: '/calender',
+    title: 'Scheduler Now'
+  },{
+    href: '/connect',
+    title: 'Connect Now'
+  },
+  {
     href: '/404',
     title: '404 Error Page'
   },

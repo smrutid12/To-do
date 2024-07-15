@@ -55,7 +55,7 @@ const Login2 = () => {
                     color="textSecondary"
                     mb={1}
                   >
-                    Your Social Campaigns
+                    Transform Your Tasks, Achieve Your Dreams.
                   </Typography>
                 }
                 subtitle={
