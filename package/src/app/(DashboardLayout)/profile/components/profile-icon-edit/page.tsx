@@ -1,8 +1,23 @@
 "use client";
 import React, { useState } from "react";
-import { Modal, Box, Typography, Grid, Avatar, Button } from "@mui/material";
+import {
+  Modal,
+  Box,
+  Typography,
+  Grid,
+  Avatar,
+  Button,
+  IconButton,
+} from "@mui/material";
+import { IconX } from "@tabler/icons-react";
 
-const EditProfileModal = ({
+interface EditProfileModalProps {
+  open: boolean;
+  handleClose: () => void;
+  currentAvatar: string;
+  handleAvatarUpdate: (avatar: string) => string;
+}
+const EditProfileModal: React.FC<EditProfileModalProps> = ({
   open,
   handleClose,
   currentAvatar,
@@ -13,13 +28,10 @@ const EditProfileModal = ({
   const avatarOptions = [
     "/images/profile/female-user.svg",
     "/images/profile/male-user.svg",
-    "/images/profile/female-user.svg",
-    "/images/profile/male-user.svg",
-    "/images/profile/female-user.svg",
-    "/images/profile/male-user.svg",
+    "/images/profile/male-user1.svg",
   ];
 
-  const handleAvatarSelect = (avatar) => {
+  const handleAvatarSelect = (avatar: string) => {
     setSelectedAvatar(avatar);
   };
 
@@ -43,15 +55,19 @@ const EditProfileModal = ({
           transform: "translate(-50%, -50%)",
           width: 400,
           bgcolor: "background.paper",
-          border: "2px solid #000",
           boxShadow: 24,
           p: 4,
         }}
       >
-        <Typography id="modal-title" variant="h6" component="h2">
-          Select an Avatar
-        </Typography>
-        <Grid container spacing={4} sx={{ mt: 2 }}>
+        <Box display="flex" justifyContent="space-between" alignItems="center">
+          <Typography id="modal-title" variant="h6" component="h2">
+            Select an Avatar
+          </Typography>
+          <IconButton onClick={handleClose}>
+            <IconX />
+          </IconButton>
+        </Box>
+        <Grid container spacing={4} sx={{ mt: 1 }}>
           {avatarOptions.map((avatar) => (
             <Grid item xs={4} key={avatar}>
               <Avatar
@@ -63,8 +79,8 @@ const EditProfileModal = ({
                   cursor: "pointer",
                   border:
                     selectedAvatar === avatar
-                      ? "1px solid black"
-                      : "1px solid black",
+                      ? "2px solid #9b82f5"
+                      : "2px solid #000",
                 }}
                 onClick={() => handleAvatarSelect(avatar)}
               />
@@ -75,7 +91,7 @@ const EditProfileModal = ({
           sx={{
             display: "flex",
             justifyContent: "center",
-            mt: 5,
+            mt: 2,
           }}
         >
           <Button variant="contained" color="primary" onClick={handleSave}>

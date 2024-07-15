@@ -10,7 +10,7 @@ import {
   Checkbox,
   Grid,
   Avatar,
-  IconButton
+  IconButton,
 } from "@mui/material";
 import Link from "next/link";
 
@@ -18,15 +18,16 @@ import CustomTextField from "@/app/(DashboardLayout)/components/forms/theme-elem
 import PageContainer from "../components/container/PageContainer";
 import { IconEdit } from "@tabler/icons-react";
 import EditProfileModal from "./components/profile-icon-edit/page";
+import UserProfileForm from "./components/profile-details/page";
 
 const Profile = () => {
   const [open, setOpen] = useState(false);
-  const [avatar, setAvatar] = useState('/images/profile/female-user.svg');
+  const [avatar, setAvatar] = useState("/images/profile/female-user.svg");
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const handleAvatarUpdate = (newAvatar, avatarFile) => {
+  const handleAvatarUpdate = (newAvatar: string) => {
     // You can use `avatarFile` to upload to a server if needed
     setAvatar(newAvatar);
   };
@@ -88,19 +89,11 @@ const Profile = () => {
             />
           </Grid>
         </Grid>
-        <Grid item xs={6}></Grid>
-        <Grid item xs={6}></Grid>
+        <Grid item xs={12}>
+          <UserProfileForm />
+        </Grid>
+        <Grid item xs={12}></Grid>
       </Grid>
-      <Box>
-        <Button
-          color="primary"
-          variant="contained"
-          size="large"
-          type="submit"
-        >
-          Sign In
-        </Button>
-      </Box>
     </PageContainer>
   );
 };
